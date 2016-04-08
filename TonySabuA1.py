@@ -242,5 +242,14 @@ def return_item(items):
                 print('Invalid input; enter a number')
                 continue
 
+def save(items):
+    out_file = open('item.csv', 'w')  # opening the csv file to write
+    for i in range(len(items)):
+        out_file.write((items[i][0] + ','))
+        out_file.write((items[i][1] + ','))
+        out_file.write(str(items[i][2]) + ',')
+        out_file.write((items[i][3]))
+        out_file.write("\n")
+    out_file.close()
 
 main()

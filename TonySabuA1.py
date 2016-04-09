@@ -2,6 +2,7 @@
     Items for hire - Solution
     Tony Sabu
     08/04/2016
+    github url:https://github.com/tonysabu33/Assignment1
 
 Pseudocode:
 
@@ -149,6 +150,7 @@ def main():
         choice = input(">>> ").upper()
     save(items)
     print('{} items saved to item.csv'.format(len(items)))
+    print('Have a nice day :)')
 
 
 def load_items():
@@ -198,7 +200,7 @@ def hire_item(items):
                 if hire < 0:
                     print('Enter a real number:')
                 elif hire not in avl_list:
-                    print('That item is not available')
+                    print('That item is not available for hire')
                 else:
                     print("{} hired for ${:2.2f}".format(items[hire][0], float(items[hire][2])))
                     avl_list.remove(hire)  # removing the item from available item's list
@@ -221,7 +223,7 @@ def return_item(items):
             hir_list.append(number)  # appending the list of items to available item list
 
     if len(hir_list) == 0:
-        print('no item to return')
+        print('no items are currently on hire')
     else:
 
         valid = False
@@ -229,9 +231,9 @@ def return_item(items):
             try:
                 retn = int(input('Enter the number of an item to return:'))
                 if retn < 0:
-                    print('Enter a real number:')
+                    print('Invalid item number:')
                 elif retn not in hir_list:
-                    print('That item is not on hire')
+                    print('Invalid item number')
                 else:
                     print("{} returned".format(items[retn][0]))
                     hir_list.remove(retn)  # removing the item from available item's list
@@ -260,7 +262,7 @@ def add_item(items):
         try:
             it_price = float(input('Price per day:'))
             if it_price < 0:
-                print('invalid price')
+                print('Price must be >=0\nInvalid input; enter a valid number')
             elif it_price == "":
                 print('Input cannot be blank')
 
@@ -272,7 +274,7 @@ def add_item(items):
                 items.append(new_list)  # appending new item's list to items
                 break
         except ValueError:
-            print('Enter a valid number')
+            print('Invalid input; Enter a valid number')
     return items
             
 

@@ -241,6 +241,40 @@ def return_item(items):
             except ValueError:
                 print('Invalid input; enter a number')
                 continue
+            
+def add_item(items):
+    new_list = []  # making a list for the new items
+    it_name = input('Item name:')
+    while it_name == "":
+        print('Input cannot be blank')
+        it_name = input('Item name:')
+    new_list.append(it_name)  # appending name of item to new item's list
+
+    it_description = input('Description:')
+    while it_description == "":
+        print('Input cannot be blank')
+        it_description = input('Description:')
+    new_list.append(it_description)  # appending description of item to new item's list
+    valid = False
+    while not valid:
+        try:
+            it_price = float(input('Price per day:'))
+            if it_price < 0:
+                print('invalid price')
+            elif it_price == "":
+                print('Input cannot be blank')
+
+            else:
+                new_list.append(it_price)  # appending price of item to new item's list
+                new_list.append('in')
+
+                print("{} ({}), ${} now available for hire".format(it_name, it_description, it_price))
+                items.append(new_list)  # appending new item's list to items
+                break
+        except ValueError:
+            print('Enter a valid number')
+    return items
+            
 
 def save(items):
     out_file = open('item.csv', 'w')  # opening the csv file to write

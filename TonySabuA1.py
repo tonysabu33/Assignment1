@@ -2,7 +2,7 @@
     Items for hire - Solution
     Tony Sabu
     11/04/2016
-    github url:https://github.com/tonysabu33/Assignment1
+    github url:https://github.com/tonysabu33/Assignment1.git
 
 Pseudocode:
 

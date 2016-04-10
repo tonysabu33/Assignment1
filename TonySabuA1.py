@@ -1,7 +1,7 @@
 """CP5632 Assignment 1 - 2016
     Items for hire - Solution
     Tony Sabu
-    08/04/2016
+    11/04/2016
     github url:https://github.com/tonysabu33/Assignment1
 
 Pseudocode:
@@ -154,7 +154,7 @@ def main():
 
 
 def load_items():
-    file = open('item.csv')  # opening the csv file
+    file = open('items.csv')  # opening the csv file
 
     items = []
 
@@ -279,7 +279,7 @@ def add_item(items):
             
 
 def save(items):
-    out_file = open('item.csv', 'w')  # opening the csv file to write
+    out_file = open('items.csv', 'w')  # opening the csv file to write
     for i in range(len(items)):
         out_file.write((items[i][0] + ','))
         out_file.write((items[i][1] + ','))
